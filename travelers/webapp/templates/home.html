@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello Python, My name is {{name}}, a {{age}} years old {{nationality}} and  I will be the best programmer of {{framework}}</h1>
+<form action="add" method="post" name="solve_maths">
+    {% csrf_token %}
+    <h4>Enter 1st number: <input name="num1" type="text"><br></h4>
+    <h4>Enter 2nd n umber: <input name="num2" type="text"><br></h4>
+    <input type="submit" value="Solve">
+</form>
+{% endblock content %}

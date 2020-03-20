@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <form action="register" method="POST" name="registration">
+         {% csrf_token %}
+        <label>First Name:</label> <input name="first_name" placeholder="enter your first name" type="text"><br>
+        <label>Last Name:</label> <input name="last_name" placeholder="enter your last name" type="text"><br>
+        <label>Email address:</label> <input name="email" placeholder="enter your email address" type="email"><br>
+        <label>Username:</label> <input name="username" placeholder="create a username" type="text"><br>
+        <label>Password:</label> <input name="password_one" placeholder="create a username" type="password"><br>
+        <label>Re-enter Password:</label> <input name="password_two" placeholder="create a username" type="password"><br>
+        <br><br><br>
+        <input type="submit">
+    </form>
+    {% for message in messages %}
+    <h4>{{message}}</h4>
+    {% endfor %}
+</div>
+{% endblock content %}
